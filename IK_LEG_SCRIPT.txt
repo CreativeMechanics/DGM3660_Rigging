@@ -1,0 +1,17 @@
+joint -n "Hip" -p 0 9 0 ;
+joint -n "Knee" -p 0 5 1 ;
+joint -n "Ankle" -p 0 0 0 ;
+joint -n "Foot" -p 0 0 2 ;
+
+makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1;
+
+select Hip|Knee|Ankle.rotatePivot ;
+select -add Hip.rotatePivot ;
+ikHandle -n "IK_Handle";
+
+circle -n "IK_Control";
+
+select IK_Handle;
+select IK_Control;
+parent;
+

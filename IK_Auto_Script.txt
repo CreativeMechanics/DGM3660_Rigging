@@ -1,0 +1,18 @@
+SelectHierarchy
+string $Joints[];
+int $JointAmount = size($Joints);
+
+
+$IK_Top = $Joints [0];
+$IK_Bottom = $Joints [$JointAmount];
+
+select IK_Bottom;
+select IK_Top;
+
+ikHandle -n "IK_Handle";
+
+circle -n "IK_Control";
+
+select IK_Handle;
+select IK_Control;
+parent;
